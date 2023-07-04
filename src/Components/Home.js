@@ -20,12 +20,11 @@ function Home() {
       <div className="grid-container">
         {items.map((item) => (
           <div key={item.id} className="grid-item">
-            <img
-              src={`https://picsum.photos/200?random=${item.id}&userId=${item.userId}`}
-              alt="Post"
-            />
-            <p>User ID: {item.userId}</p>
             <Link to={`/item/${item.id}`}>
+            <img src={`https://picsum.photos/200?random=${item.id}&userId=${item.userId}`}
+              alt="Post"/>
+            <p>User ID: {item.userId}</p>
+            {/* <Link to={`/item/${item.id}`}> */}
               <h3>
                 {item.title.length > 30
                   ? `${item.title.slice(0, 30)}...`
