@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import Post from './Post';
 import "./Home.css";
+import 'bootstrap/dist/css/bootstrap.css';
 import { fetchItems } from '../actions/Actions';
 
 function Home() {
@@ -15,7 +16,8 @@ function Home() {
   }, [dispatch]);
 
   return (
-    <div className="home-container">
+
+ <div className="home-container">
       <h1>Social Media App</h1>
       <div className="grid-container">
         {items.map((item) => (
@@ -25,14 +27,14 @@ function Home() {
               alt="Post"/>
             <p>User ID: {item.userId}</p>
             {/* <Link to={`/item/${item.id}`}> */}
-              <h3>
+              <p>Title:
                 {item.title.length > 30
                   ? `${item.title.slice(0, 30)}...`
                   : item.title}
-              </h3>
+              </p>
             </Link>
             {/* <p>User ID: {item.userId}</p> */}
-            <p>
+            <p>Body:
               {item.body.length > 100
                 ? `${item.body.slice(0, 100)}...`
                 : item.body}

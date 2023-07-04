@@ -14,8 +14,13 @@ function ItemDetail() {
   }
 
   return (
-    <div>
+    <div className="grid-item2">
       <h1>Social Media App</h1>
+      <h3>Details Page for Post with ID ${item.id}</h3>
+      <img
+        src={`https://picsum.photos/200?random=${item.id}`}
+                  
+                  alt="Post"/>
       <h2>{item.title}</h2>
       <p>{item.body}</p>
       <p>User ID: {item.userId}</p>
